@@ -63,9 +63,9 @@ def rss():
 
 @app.route('/')
 def home():
-    response = requests.get(settings.API_URL + '/getAdvertisements')
-    response2 = requests.get(settings.API_URL + '/getPosts')
-
+    response = requests.get(settings.API_URL + '/getAdvertisements?')
+    response2 = requests.get(settings.API_URL + '/getPosts?')
+    
     ads = response.json()
     posts = response2.json()
     return render_template("index.html", ads=ads, posts=posts)
