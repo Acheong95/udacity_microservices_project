@@ -15,7 +15,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client['project2mongodb']
             collection = database['posts']
 
-            query = {'_id': ObjectId(id)}
+            query = {'_id': id}
             result = collection.find_one(query)
             result = dumps(result)
 
